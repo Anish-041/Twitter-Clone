@@ -22,7 +22,7 @@ router.post("/",async(req,res)=>{
     const token=createJwtToken(result);
     res.cookie("token",token)
     console.log(token);
-    res.redirect("/");
+    res.send({token});
 })
 
 export default router;
