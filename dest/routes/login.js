@@ -35,6 +35,6 @@ router.post("/", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const token = (0, auth_1.createJwtToken)(result);
     res.cookie("token", token);
     console.log(token);
-    res.redirect("/");
+    res.send({ token });
 }));
 exports.default = router;
