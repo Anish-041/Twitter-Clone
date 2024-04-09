@@ -7,6 +7,7 @@ import loginRoute from "./routes/login";
 import likeRoute from "./routes/like";
 import retweetRoute from "./routes/retweet";
 import cookieParser from 'cookie-parser';
+import CORS from 'cors';
 const PORT = 9011;
 const app = express();
 const path = require("path");
@@ -16,6 +17,7 @@ app.use(express.json());
 app.use(express.urlencoded({extended:true}))
 
 // Routes
+app.use(CORS());
 app.use("/user",userRoute);
 app.use("/tweet",tweetRoute);
 app.use("/login",loginRoute);
